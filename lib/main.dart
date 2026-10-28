@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(const AppTaller());
 }
-
+  
 class AppTaller extends StatelessWidget {
   const AppTaller({super.key});
 
@@ -26,7 +26,6 @@ class PantallaMenuPrincipal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Definimos tus 5 botones específicos
     final List<String> modulos = [
       'Clientes',
       'Vehículos',
@@ -35,18 +34,17 @@ class PantallaMenuPrincipal extends StatelessWidget {
       'Gestión de Servicios',
     ];
 
-    // Iconos ideales para cada categoría automotriz
     final List<IconData> iconos = [
-      Icons.people_alt_rounded,       // Clientes
-      Icons.directions_car_rounded,   // Vehículos
-      Icons.engineering_rounded,      // Mecánicos
-      Icons.build_circle_rounded,     // Repuestos
-      Icons.assignment_rounded,       // Gestión de Servicios
+      Icons.people_alt_rounded,
+      Icons.directions_car_rounded,
+      Icons.engineering_rounded,
+      Icons.build_circle_rounded,
+      Icons.assignment_rounded,
     ];
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('GestorApp El Ultimo Arranque'),
+        title: const Text('Aplicacion de gestion'),
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         centerTitle: true,
       ),
@@ -55,10 +53,10 @@ class PantallaMenuPrincipal extends StatelessWidget {
         child: GridView.builder(
           itemCount: modulos.length,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2, // Mantiene la estructura de 2 columnas
+            crossAxisCount: 2,
             crossAxisSpacing: 16.0,
             mainAxisSpacing: 16.0,
-            childAspectRatio: 1.2, // Ajustamos un poco la altura de los botones
+            childAspectRatio: 1.2,
           ),
           itemBuilder: (context, index) {
             return Card(
@@ -68,7 +66,6 @@ class PantallaMenuPrincipal extends StatelessWidget {
               ),
               child: InkWell(
                 onTap: () {
-                  // Muestra en la consola de VS Code qué módulo se seleccionó
                   print('Abriendo módulo: ${modulos[index]}');
                 },
                 borderRadius: BorderRadius.circular(16),
@@ -83,7 +80,7 @@ class PantallaMenuPrincipal extends StatelessWidget {
                     const SizedBox(height: 12),
                     Text(
                       modulos[index],
-                      textAlign: TextAlign.center, // Centra el texto si es largo
+                      textAlign: TextAlign.center, 
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
